@@ -15,16 +15,21 @@ Nome: <input type="text" name="" ng-model="nome">
 <br>
 Idade: <input type="number" name="" ng-model="idade">
 <br>
-Sexo: <br><input type="radio" name="" ng-model="masculino"> Masculino
+Sexo: <br><input type="radio" value="Masculino" ng-model="sexo"> Masculino
 <br>
-<input type="radio" name="" ng-model="feminino"> Feminino
+<input type="radio" value="Feminino" ng-model="sexo"> Feminino
 <br>
 Adicionar Cartão de Crédito?
 <br>
-<input type="radio" name="" ng-model="sim"> Sim
-<input type="radio" name="" ng-model="nao"> Não
+<input name="" ng-click ="mostrarCartao('true')" type="radio" value="Sim"> Sim
+<input name="" ng-click ="mostrarCartao(false)" type="radio" value="Não"> Não
 <br>
-<button>Cadastrar</button>
+<br>
+<div ng-hide = "temCartao">
+	Numero do cartão<input type="number" name="" ng-model="numero_cartao">	
+</div>
+
+<button ng-click="cadastrar()">Cadastrar</button>
 
 
 <script src="scripts/angular.min.js" type="text/javascript"></script>

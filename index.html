@@ -33,15 +33,23 @@ Adicionar Cartão de Crédito?
 <button ng-click="cadastrar()">Cadastrar</button>
 <div ng-if="cadastrados.length>0">
 	<h2>Usuários Cadastrados</h2>
-	<ul ng-repeat="c in cadastrados">
-	<li>Nome: {{c.nome}}</li>
-	<li>Sexo: {{c.sexo}}</li>
-	<li>Idade: {{c.idade}}</li>
-	<li>Tem Cartão: {{c.temCartao}}</li>
-	<li ng-if="c.temCartao =='Sim'">Numero: {{c.numero_cartao}}</li>
-	<br>
-
-</ul>
+	<table style="width:100%">
+  <tr>
+    <th>Nome</th>
+    <th>Sexo</th> 
+    <th>Idade</th>
+    <th>Tem Cartão</th>
+    <th>Número</th>
+  </tr>
+  <tr  ng-repeat="c in cadastrados">
+    <th>{{c.nome}}</th>
+    <th>{{c.sexo}}</th> 
+    <th>{{c.idade}}</th>
+    <th>{{c.temCartao}}</th>
+    <th>{{c.numero_cartao}}</th>
+  </tr>
+  
+</table>
 </div>
 
 <script src="scripts/angular.min.js" type="text/javascript"></script>

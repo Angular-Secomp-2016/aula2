@@ -2,7 +2,7 @@ var app = angular.module('aula2', []);
 
 app.controller('Home', ['$rootScope', '$scope','$http', function($rootScope, $scope,$http){
 	
-	$rootScope.usuarios = [];
+	$scope.cadastrados = [];
 	$scope.temCartao = false;
 
 	$scope.mostrarCartao = function(mostrar){
@@ -20,14 +20,14 @@ app.controller('Home', ['$rootScope', '$scope','$http', function($rootScope, $sc
 			nome:$scope.nome,
 			idade: $scope.idade,
 			sexo:$scope.sexo,
-			numero_cartao: $scope.numero,
+			numero_cartao: $scope.numero_cartao,
 			temCartao: $scope.possuiCartao
 
 		};
 
-		$rootScope.push(usuario);
-		window.location = "cadastrados.html"
+		$scope.cadastrados.push(usuario);
+		
+		//window.location = "cadastrados.html"
 
 	}
 }]);
-
